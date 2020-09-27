@@ -1,6 +1,6 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-public class EvenIt implements  Iterator<Integer>{
+public class EvenIt implements  Iterator<Integer> {
         /**
          * field of array.
          */
