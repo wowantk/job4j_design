@@ -33,7 +33,9 @@ public class BackwardArrayIt implements Iterator<Integer> {
      */
     @Override
     public Integer next() {
-        if(point == 100) point = data.length-1;
+        if (point == 100) {
+            point = data.length - 1;
+                         }
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
