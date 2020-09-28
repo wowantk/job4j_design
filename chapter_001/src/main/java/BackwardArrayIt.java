@@ -8,7 +8,7 @@ public class BackwardArrayIt implements Iterator<Integer> {
     /**
      * field of counter.
      */
-    private int point = 100;
+    private int point = 0;
 
     /**
      *
@@ -24,7 +24,7 @@ public class BackwardArrayIt implements Iterator<Integer> {
      */
     @Override
     public boolean hasNext() {
-        return point >= 0;
+        return point < data.length;
     }
 
     /**
@@ -33,14 +33,10 @@ public class BackwardArrayIt implements Iterator<Integer> {
      */
     @Override
     public Integer next() {
-        if (point == 100) {
-            point = data.length - 1;
-                         }
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
-
-        return data[point--];
+        return data[data.length - 1 - point++];
     }
 
     @Override
