@@ -9,30 +9,30 @@ public class EvenIt implements  Iterator<Integer> {
          * field of counter.
          */
         private int point = 0;
-
         /**
          *constructor of object iterator that take array.
          * @param data object array
          */
+
         public EvenIt(int[] data) {
             this.data = data;
         }
-
         /**
          * Checker for all next element of array.
          * @return true if array contains even number
          * after checker or false when array doesnt contains even number
          */
+
         @Override
         public boolean hasNext() {
-            int co = 0;
-            for (int i = point; i < data.length; i++) {
-                if (data[i] % 2 == 0) {
-                    co++;
+            while (point < data.length) {
+                if (data[point] % 2 == 0) {
+                    return true;
                 }
+                point++;
             }
-            return co > 0;
-        }
+            return false;
+            }
 
         /**
          *
@@ -43,11 +43,6 @@ public class EvenIt implements  Iterator<Integer> {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-
-            if (data[point] % 2 != 0) {
-                point++;
-            }
-
             return data[point++];
         }
 
