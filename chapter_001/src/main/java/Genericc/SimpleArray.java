@@ -1,8 +1,10 @@
 package Genericc;
 
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.Objects;
 
-public class SimpleArray <T>{
+public class SimpleArray <T> implements Iterable<Object>{
     private Object[] obj_array;
     public final int length;
     public SimpleArray(int length) {
@@ -32,4 +34,9 @@ public class SimpleArray <T>{
       final T t = (T)obj_array[i];
       return t;
   }
+
+    @Override
+    public Iterator<Object> iterator() {
+        return Arrays.stream(obj_array).iterator();
+    }
 }
